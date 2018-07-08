@@ -28,7 +28,7 @@ module.exports = {
         test: /\.scss$/,
         loaders: [
           'style-loader',
-          { loader: 'css-loader', options: { importLoaders: 1 } },
+          { loader: 'typings-for-css-modules-loader', options: { importLoaders: 1, modules: true, namedExport: true, camelCase: true } },
           'postcss-loader',
           'sass-loader',
         ],
@@ -45,7 +45,7 @@ module.exports = {
   plugins: [
     new CheckerPlugin(),
     new StyleLintPlugin(),
-    new HtmlWebpackPlugin({template: 'index.html.ejs',}),
+    new HtmlWebpackPlugin({template: 'index.html.ejs',})
   ],
   externals: {
     'react': 'React',
